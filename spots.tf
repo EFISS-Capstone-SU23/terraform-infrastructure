@@ -37,7 +37,7 @@ resource "google_compute_instance" "spot_worker_longnv" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-394203/regions/asia-southeast1/subnetworks/default"
+    subnetwork = "projects/efiss-394203/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
@@ -101,7 +101,7 @@ resource "google_compute_instance" "spot_worker_minhpvt" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-train/regions/us-central1/subnetworks/default"
+    subnetwork = "projects/efiss-train/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
