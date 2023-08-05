@@ -1,6 +1,6 @@
 resource "google_compute_instance" "master_longnv" {
   name         = "master-longnv-${count.index}"
-  count        = 1
+  count        = 0
   provider = google.longnv
 
   machine_type = "e2-small"

@@ -64,7 +64,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
 
 resource "google_compute_instance" "spot_crawler_minhpvt" {
   name         = "spot-crawler-minhpvt-${count.index}"
-  count        = 1
+  count        = 0
   provider = google.minhpvt
 
   machine_type = "e2-custom-8-16384"  # 4 CPU cores = 8 vCPUs, 16GB RAM
