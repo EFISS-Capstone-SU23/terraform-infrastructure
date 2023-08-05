@@ -29,7 +29,7 @@ resource "google_compute_instance" "master_longnv" {
   }
 
   metadata = {
-    ssh-keys       = file("ssh-keys.txt")
+    ssh-keys       = file("./ssh-keys.txt")
     startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-master-setup.sh | bash -s ${var.github_runner_token}"
   }
 
@@ -93,7 +93,7 @@ resource "google_compute_instance" "master_minhpvt" {
   }
 
   metadata = {
-    ssh-keys       = file("ssh-keys.txt")
+    ssh-keys       = file("./ssh-keys.txt")
     startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-master-setup.sh | bash -s ${var.github_runner_token}"
   }
 

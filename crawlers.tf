@@ -28,7 +28,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
   }
 
   metadata = {
-    ssh-keys = file("ssh-keys.txt")
+    ssh-keys = file("./ssh-keys.txt")
     # startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-crawler-setup.sh | bash -s ${var.crawler_join_token} ${var.crawler_join_hash_discover}"
   }
 
@@ -92,7 +92,7 @@ resource "google_compute_instance" "spot_crawler_minhpvt" {
   }
 
   metadata = {
-    ssh-keys = file("ssh-keys.txt")
+    ssh-keys = file("./ssh-keys.txt")
     # startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-crawler-setup.sh | bash -s ${var.github_runner_token}"
   }
 
