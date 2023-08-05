@@ -28,6 +28,12 @@ jobs:
       shell: bash
       env:
         MINHPVTHE172884FPT: ${{ secrets.MINHPVTHE172884FPT }}
+   
+    - name: Create SSH keys
+      run: 'echo "$SSH_KEYS" > ssh_keys.txt'
+      shell: bash
+      env:
+        SSH_KEYS: ${{ vars.SSH_KEYS }}
 
   terraform:
     name: "Terraform Plan"
