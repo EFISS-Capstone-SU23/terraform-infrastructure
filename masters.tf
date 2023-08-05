@@ -1,9 +1,10 @@
 resource "google_compute_instance" "master_longnv" {
   name         = "master-longnv-${count.index}"
-  count        = 0
+  count        = 1
   provider = google.longnv
 
-  machine_type = "e2-small"
+#   machine_type = "e2-small"
+  machine_type = "e2-custom-8-16384"  # 4 CPU cores = 8 vCPUs, 16GB RAM
 
   boot_disk {
     auto_delete = true
@@ -11,7 +12,7 @@ resource "google_compute_instance" "master_longnv" {
 
     initialize_params {
       image = "projects/debian-cloud/global/images/debian-11-bullseye-v20230711"
-      size  = 20
+      size  = 100
       type  = "pd-balanced"
     }
 
