@@ -1,5 +1,7 @@
 # terraform-infrastructure
 
+### NOTE: Only use CI/CD to update infrastructure, do not use local terraform unless you know what you are doing. This is to prevent terraform state from being out of sync.
+
 You can update terraform.tfvars here [https://github.com/EFISS-Capstone-SU23/terraform-infrastructure/settings/variables/actions/TERRAFORM_TFVARS](https://github.com/EFISS-Capstone-SU23/terraform-infrastructure/settings/variables/actions/TERRAFORM_TFVARS)
 
 ## Setup using Github Action (recommended)
