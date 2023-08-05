@@ -39,6 +39,12 @@ jobs:
       env:
         SSH_KEYS: ${{ vars.SSH_KEYS }}
 
+    - name: Create terraform.tfvars
+      run: 'echo "$TERRAFORM_TFVARS" > terraform.tfvars'
+      shell: bash
+      env:
+        TERRAFORM_TFVARS: ${{ vars.TERRAFORM_TFVARS }}
+
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
