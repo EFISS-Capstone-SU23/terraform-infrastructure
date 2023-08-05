@@ -8,6 +8,15 @@ variable "zone" {
   default = "asia-southeast1-b"
 }
 
+variable "region2" {
+  type = string
+  default = "us-central1"
+}
+
+variable "region2_zone" {
+    type = string
+    default = "us-central1-c"
+}
 variable "github_runner_token" {
   type = string
 }

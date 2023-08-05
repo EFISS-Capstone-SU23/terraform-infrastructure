@@ -37,7 +37,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-394203/regions/us-central1/subnetworks/default"
+    subnetwork = "projects/efiss-394203/regions/${var.region2}/subnetworks/default"
   }
 
   scheduling {
@@ -59,7 +59,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = "us-central1-c"
+  zone = "${var.region2_zone}"
 }
 
 resource "google_compute_instance" "spot_crawler_minhpvt" {
@@ -101,7 +101,7 @@ resource "google_compute_instance" "spot_crawler_minhpvt" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-train/regions/us-central1/subnetworks/default"
+    subnetwork = "projects/efiss-train/regions/${var.region2}/subnetworks/default"
   }
 
   scheduling {
@@ -123,5 +123,5 @@ resource "google_compute_instance" "spot_crawler_minhpvt" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = "us-central1-c"
+  zone = "${var.region2_zone}"
 }

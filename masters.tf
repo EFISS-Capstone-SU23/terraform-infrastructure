@@ -102,7 +102,7 @@ resource "google_compute_instance" "master_minhpvt" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-train/regions/us-central1/subnetworks/default"
+    subnetwork = "projects/efiss-train/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
