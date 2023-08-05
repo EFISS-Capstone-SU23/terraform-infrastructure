@@ -1,10 +1,10 @@
 resource "google_compute_instance" "master_longnv" {
-  name         = "master-longnv-${count.index}"
-  count        = 1
+  name     = "master-longnv-${count.index}"
+  count    = 1
   provider = google.longnv
 
-#   machine_type = "e2-small"
-  machine_type = "e2-custom-8-16384"  # 4 CPU cores = 8 vCPUs, 16GB RAM
+  #   machine_type = "e2-small"
+  machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
   boot_disk {
     auto_delete = true
@@ -64,8 +64,8 @@ resource "google_compute_instance" "master_longnv" {
 }
 
 resource "google_compute_instance" "master_minhpvt" {
-  name         = "master-minhpvt-${count.index}"
-  count        = 0
+  name     = "master-minhpvt-${count.index}"
+  count    = 0
   provider = google.minhpvt
 
   machine_type = "e2-small"

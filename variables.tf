@@ -9,13 +9,13 @@ variable "zone" {
 }
 
 variable "github_runner_token" {
-  type    = string
+  type = string
 }
 
 variable "worker_join_token" {
-    type    = string
+  type = string
 }
 
 variable "worker_join_hash_discover" {
-    type    = string
+  type = string
 }

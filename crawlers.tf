@@ -1,9 +1,9 @@
 resource "google_compute_instance" "spot_crawler_longnv" {
-  name         = "spot-crawler-longnv-${count.index}"
-  count        = 0
+  name     = "spot-crawler-longnv-${count.index}"
+  count    = 0
   provider = google.longnv
 
-  machine_type = "e2-custom-8-16384"  # 4 CPU cores = 8 vCPUs, 16GB RAM
+  machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
   boot_disk {
     auto_delete = true
@@ -28,7 +28,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
   }
 
   metadata = {
-    ssh-keys       = file("ssh-keys.txt")
+    ssh-keys = file("ssh-keys.txt")
     # startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-crawler-setup.sh | bash -s ${var.crawler_join_token} ${var.crawler_join_hash_discover}"
   }
 
@@ -63,11 +63,11 @@ resource "google_compute_instance" "spot_crawler_longnv" {
 }
 
 resource "google_compute_instance" "spot_crawler_minhpvt" {
-  name         = "spot-crawler-minhpvt-${count.index}"
-  count        = 0
+  name     = "spot-crawler-minhpvt-${count.index}"
+  count    = 0
   provider = google.minhpvt
 
-  machine_type = "e2-custom-8-16384"  # 4 CPU cores = 8 vCPUs, 16GB RAM
+  machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
   boot_disk {
     auto_delete = true
@@ -92,7 +92,7 @@ resource "google_compute_instance" "spot_crawler_minhpvt" {
   }
 
   metadata = {
-    ssh-keys       = file("ssh-keys.txt")
+    ssh-keys = file("ssh-keys.txt")
     # startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-crawler-setup.sh | bash -s ${var.github_runner_token}"
   }
 

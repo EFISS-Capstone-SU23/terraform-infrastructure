@@ -1,6 +1,6 @@
 resource "google_compute_instance" "spot_worker_longnv" {
-  name         = "spot-worker-longnv-${count.index}"
-  count        = 0
+  name     = "spot-worker-longnv-${count.index}"
+  count    = 0
   provider = google.longnv
 
   machine_type = "e2-small"
@@ -63,8 +63,8 @@ resource "google_compute_instance" "spot_worker_longnv" {
 }
 
 resource "google_compute_instance" "spot_worker_minhpvt" {
-  name         = "spot-worker-minhpvt-${count.index}"
-  count        = 0
+  name     = "spot-worker-minhpvt-${count.index}"
+  count    = 0
   provider = google.minhpvt
 
   machine_type = "e2-small"
