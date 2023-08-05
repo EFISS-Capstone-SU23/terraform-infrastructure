@@ -1,5 +1,7 @@
 # terraform-infrastructure
 
+You can update terraform.tfvars here [https://github.com/EFISS-Capstone-SU23/terraform-infrastructure/settings/variables/actions/TERRAFORM_TFVARS](https://github.com/EFISS-Capstone-SU23/terraform-infrastructure/settings/variables/actions/TERRAFORM_TFVARS)
+
 ## Setup using Github Action (recommended)
 
 Add Github Actions with the following environment variables
