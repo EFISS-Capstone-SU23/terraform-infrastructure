@@ -10,6 +10,25 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
+  setup:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create GCP service account 1
+      run: 'echo "$LONGNV_GCP" > efiss-terraform-service-account_Longnv.json'
+      shell: bash
+      env:
+        LONGNV_GCP: ${{ secrets.LONGNV_GCP }}
+    
+    - name: Create GCP service account 2
+      run: 'echo "$MINHPVTHE172884FPT" > efiss-terraform-service-account_Minhpvt.json'
+      shell: bash
+      env:
+        MINHPVTHE172884FPT: ${{ secrets.MINHPVTHE172884FPT }}
+
   terraform:
     name: "Terraform Plan"
     runs-on: ubuntu-latest
@@ -17,9 +36,6 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
         id: plan-upload
