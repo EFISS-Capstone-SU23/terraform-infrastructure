@@ -1,3 +1,3 @@
-github_runner_token = ""
-worker_join_token = ""
+github_runner_token       = "ALO6ZWDIWIFZXCYZMINPUTLEZY2TK"
+worker_join_token         = ""
 worker_join_hash_discover = ""
