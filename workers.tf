@@ -64,7 +64,7 @@ resource "google_compute_instance" "worker_longnv" {
 
 resource "google_compute_instance" "worker_minhpvt" {
   name     = "worker-minhpvt-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.minhpvt
 
   machine_type = "e2-small"
@@ -93,7 +93,7 @@ resource "google_compute_instance" "worker_minhpvt" {
 
   metadata = {
     ssh-keys       = file("./ssh-keys.txt")
-    startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-worker-setup.sh | bash -s ${var.github_runner_token}"
+    startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-worker-setup.sh | bash -s ${var.worker_join_token} ${var.worker_join_hash_discover}"
   }
 
   network_interface {
