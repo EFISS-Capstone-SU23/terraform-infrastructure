@@ -19,12 +19,15 @@ variable "region2_zone" {
 }
 variable "github_runner_token" {
   type = string
+  default = ""
 }
 
 variable "worker_join_token" {
   type = string
+  default = ""
 }
 
 variable "worker_join_hash_discover" {
   type = string
+  default = ""
 }
