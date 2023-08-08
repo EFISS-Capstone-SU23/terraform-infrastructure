@@ -129,12 +129,10 @@ resource "google_compute_instance" "master_minhpvt" {
 
 resource "google_compute_instance" "master_anhnd" {
   name     = "master-anhnd-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.anhnd
 
-  #   machine_type = "e2-small"
-  #   machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
-  machine_type = "e2-highmem-8" # 2 CPU cores = 4 vCPUs, 32GB RAM
+  machine_type = "e2-standard-2"  # 2 vCPU, 8GB RAM
 
   boot_disk {
     auto_delete = true
@@ -142,7 +140,7 @@ resource "google_compute_instance" "master_anhnd" {
 
     initialize_params {
       image = "projects/debian-cloud/global/images/debian-11-bullseye-v20230711"
-      size  = 100
+      size  = 40
       type  = "pd-balanced"
     }
 
@@ -168,7 +166,7 @@ resource "google_compute_instance" "master_anhnd" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/reflected-coder-395210/regions/asia-southeast1/subnetworks/default"
+    subnetwork = "projects/reflected-coder-395210/regions/${var.region2}/subnetworks/default"
   }
 
   scheduling {
@@ -190,5 +188,5 @@ resource "google_compute_instance" "master_anhnd" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = var.zone
+  zone = var.region2_zone
 }
