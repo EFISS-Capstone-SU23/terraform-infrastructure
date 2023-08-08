@@ -128,7 +128,7 @@ resource "google_compute_instance" "worker_minhpvt" {
 
 resource "google_compute_instance" "worker_anhnd" {
   name     = "worker-anhnd-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.anhnd
 
   machine_type = "e2-small"
