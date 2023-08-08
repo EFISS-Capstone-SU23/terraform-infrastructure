@@ -126,8 +126,8 @@ resource "google_compute_instance" "spot_worker_minhpvt" {
   zone = var.zone
 }
 
-resource "google_compute_instance" "worker_anhnd" {
-  name     = "worker-anhnd-${count.index}"
+resource "google_compute_instance" "spot_worker_anhnd" {
+  name     = "spot-worker-anhnd-${count.index}"
   count    = 0
   provider = google.anhnd
 

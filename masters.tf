@@ -142,7 +142,7 @@ resource "google_compute_instance" "master_anhnd" {
 
     initialize_params {
       image = "projects/debian-cloud/global/images/debian-11-bullseye-v20230711"
-      size  = 10
+      size  = 100
       type  = "pd-balanced"
     }
 
