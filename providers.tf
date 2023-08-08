@@ -26,3 +26,11 @@ provider "google" {
   zone        = var.zone
   alias       = "minhpvt"
 }
+
+provider "google" {
+  credentials = file("efiss-terraform-service-account_Anhnd.json")
+  project     = "reflected-coder-395210"
+  region      = var.region
+  zone        = var.zone
+  alias       = "anhnd"
+}
