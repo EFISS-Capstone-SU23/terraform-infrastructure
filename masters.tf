@@ -129,11 +129,12 @@ resource "google_compute_instance" "master_minhpvt" {
 
 resource "google_compute_instance" "master_anhnd" {
   name     = "master-anhnd-${count.index}"
-  count    = 0
+  count    = 2
   provider = google.anhnd
 
   #   machine_type = "e2-small"
-  machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
+#   machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
+  machine_type = "e2-highmem-4" # 2 CPU cores = 4 vCPUs, 32GB RAM
 
   boot_disk {
     auto_delete = true
