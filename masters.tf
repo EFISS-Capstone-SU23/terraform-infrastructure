@@ -129,7 +129,7 @@ resource "google_compute_instance" "master_minhpvt" {
 
 resource "google_compute_instance" "master_anhnd" {
   name     = "master-anhnd-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.anhnd
 
   #   machine_type = "e2-small"
