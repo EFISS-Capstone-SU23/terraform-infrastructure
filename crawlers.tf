@@ -59,7 +59,7 @@ resource "google_compute_instance" "spot_crawler_longnv" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = "${var.region2_zone}"
+  zone = var.region2_zone
 }
 
 resource "google_compute_instance" "spot_crawler_minhpvt" {
@@ -123,5 +123,5 @@ resource "google_compute_instance" "spot_crawler_minhpvt" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = "${var.region2_zone}"
+  zone = var.region2_zone
 }

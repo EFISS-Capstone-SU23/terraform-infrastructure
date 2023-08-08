@@ -13,8 +13,8 @@ Add Github Actions with the following environment variables
 1.1. `TERRAFORM_TFVARS`
 
 ```bash
-github_runner_token = ""
-worker_join_token = ""
+github_runner_token       = ""
+worker_join_token         = ""
 worker_join_hash_discover = ""
 ```
 

@@ -9,25 +9,25 @@ variable "zone" {
 }
 
 variable "region2" {
-  type = string
+  type    = string
   default = "us-central1"
 }
 
 variable "region2_zone" {
-    type = string
-    default = "us-central1-c"
+  type    = string
+  default = "us-central1-c"
 }
 variable "github_runner_token" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "worker_join_token" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "worker_join_hash_discover" {
-  type = string
+  type    = string
   default = ""
 }
