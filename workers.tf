@@ -1,9 +1,9 @@
 resource "google_compute_instance" "worker_longnv" {
   name     = "worker-longnv-${count.index}"
-  count    = 0
+  count    = 3
   provider = google.longnv
 
-  machine_type = "e2-small"
+  machine_type = "e2-custom-2-8192"  # 2 vCPUs, 8 GB memory
 
   boot_disk {
     auto_delete = true
