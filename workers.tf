@@ -37,7 +37,7 @@ resource "google_compute_instance" "worker_longnv" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-394203/regions/${var.region2}/subnetworks/default"
+    subnetwork = "projects/efiss-394203/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
@@ -59,7 +59,7 @@ resource "google_compute_instance" "worker_longnv" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = var.region2_zone
+  zone = var.zone
 }
 
 resource "google_compute_instance" "worker_minhpvt" {
