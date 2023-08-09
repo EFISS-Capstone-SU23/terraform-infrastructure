@@ -131,7 +131,7 @@ resource "google_compute_instance" "worker_anhnd" {
   count    = 0
   provider = google.anhnd
 
-  machine_type = "e2-small"
+  machine_type = "e2-highmem-2"
 
   boot_disk {
     auto_delete = true
@@ -165,7 +165,7 @@ resource "google_compute_instance" "worker_anhnd" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/reflected-coder-395210/regions/${var.region2}/subnetworks/default"
+    subnetwork = "projects/reflected-coder-395210/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
@@ -187,5 +187,5 @@ resource "google_compute_instance" "worker_anhnd" {
   }
 
   tags = ["http-server", "https-server"]
-  zone = var.region2_zone
+  zone = var.zone
 }
