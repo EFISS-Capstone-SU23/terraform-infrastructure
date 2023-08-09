@@ -128,7 +128,7 @@ resource "google_compute_instance" "spot_worker_minhpvt" {
 
 resource "google_compute_instance" "spot_worker_anhnd" {
   name     = "spot-worker-anhnd-${count.index}"
-  count    = 1
+  count    = 0
   provider = google.anhnd
 
   machine_type = "e2-highmem-8"  # 8 vCPU, 64GB RAM
