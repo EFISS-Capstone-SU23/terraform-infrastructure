@@ -65,7 +65,7 @@ resource "google_compute_instance" "master_longnv" {
 
 resource "google_compute_instance" "master_minhpvt" {
   name     = "master-minhpvt-${count.index}"
-  count    = 1
+  count    = 0
   provider = google.minhpvt
 
   machine_type = "e2-small"
