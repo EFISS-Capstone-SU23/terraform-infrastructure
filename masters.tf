@@ -4,7 +4,7 @@ resource "google_compute_instance" "master_longnv" {
   provider = google.longnv
 
   #   machine_type = "e2-small"
-  machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
+  machine_type = "e2-custom-2-8192" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
   boot_disk {
     auto_delete = true
