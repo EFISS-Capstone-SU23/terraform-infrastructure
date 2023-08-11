@@ -64,10 +64,10 @@ resource "google_compute_instance" "spot_worker_longnv" {
 
 resource "google_compute_instance" "spot_worker_minhpvt" {
   name     = "spot-worker-minhpvt-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.minhpvt
 
-  machine_type = "e2-highmem-8"  # 8 vCPU, 64GB RAM
+  machine_type = "e2-custom-2-8192"  # 8 vCPU, 64GB RAM
 
   boot_disk {
     auto_delete = true

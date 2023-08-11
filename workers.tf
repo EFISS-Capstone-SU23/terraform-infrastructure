@@ -1,6 +1,6 @@
 resource "google_compute_instance" "worker_longnv" {
   name     = "worker-longnv-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.longnv
 
   machine_type = "e2-custom-2-8192"  # 2 vCPUs, 8 GB memory
