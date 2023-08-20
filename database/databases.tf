@@ -1,13 +1,13 @@
 # efiss-admin
 resource "google_sql_database" "database" {
-  provider = google.longnv
+  provider = google.minhpvt
   name     = "efiss-admin"
   instance = google_sql_database_instance.instance.name
 }
 
 # See versions at https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#database_version
 resource "google_sql_database_instance" "instance" {
-  provider         = google.longnv
+  provider         = google.minhpvt
   name             = "efiss-admin"
   region           = var.region
   database_version = "MYSQL_8_0"
@@ -21,12 +21,12 @@ resource "google_sql_database_instance" "instance" {
 
 # efiss-auth
 resource "google_sql_database" "database" {
-  provider = google.longnv
+  provider = google.minhpvt
   name     = "efiss-auth"
   instance = google_sql_database_instance.instance.name
 }
 resource "google_sql_database_instance" "instance" {
-  provider         = google.longnv
+  provider         = google.minhpvt
   name             = "efiss-auth"
   region           = var.region
   database_version = "MYSQL_8_0"
@@ -39,12 +39,12 @@ resource "google_sql_database_instance" "instance" {
 
 # efiss-normal-user
 resource "google_sql_database" "database" {
-  provider = google.longnv
+  provider = google.minhpvt
   name     = "efiss-normal-user"
   instance = google_sql_database_instance.instance.name
 }
 resource "google_sql_database_instance" "instance" {
-  provider         = google.longnv
+  provider         = google.minhpvt
   name             = "efiss-normal-user"
   region           = var.region
   database_version = "MYSQL_8_0"
@@ -57,12 +57,12 @@ resource "google_sql_database_instance" "instance" {
 
 # efiss-ads
 resource "google_sql_database" "database" {
-  provider = google.longnv
+  provider = google.minhpvt
   name     = "efiss-ads"
   instance = google_sql_database_instance.instance.name
 }
 resource "google_sql_database_instance" "instance" {
-  provider         = google.longnv
+  provider         = google.minhpvt
   name             = "efiss-ads"
   region           = var.region
   database_version = "MYSQL_8_0"
