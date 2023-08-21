@@ -1,7 +1,7 @@
-resource "google_compute_instance" "spot_worker_longnv" {
-  name     = "spot-worker-longnv-${count.index}"
+resource "google_compute_instance" "spot_worker_duonglt" {
+  name     = "spot-worker-duonglt-${count.index}"
   count    = 0
-  provider = google.longnv
+  provider = google.duonglt
 
   machine_type = "e2-highmem-8"  # 8 vCPU, 64GB RAM
 

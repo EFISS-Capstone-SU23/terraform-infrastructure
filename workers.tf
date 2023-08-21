@@ -1,7 +1,7 @@
-resource "google_compute_instance" "worker_longnv" {
-  name     = "worker-longnv-${count.index}"
+resource "google_compute_instance" "worker_duonglt" {
+  name     = "worker-duonglt-${count.index}"
   count    = 0
-  provider = google.longnv
+  provider = google.duonglt
 
   machine_type = "e2-custom-2-8192"  # 2 vCPUs, 8 GB memory
 

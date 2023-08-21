@@ -23,10 +23,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Create GCP service account 1
-      run: 'echo "$LONGNV_GCP" > efiss-terraform-service-account_Longnv.json'
+      run: 'echo "$DUONGLT_GCP" > efiss-terraform-service-account_Duonglt.json'
       shell: bash
       env:
-        LONGNV_GCP: ${{ secrets.LONGNV_GCP }}
+        DUONGLT_GCP: ${{ secrets.DUONGLT_GCP }}
     
     - name: Create GCP service account 2
       run: 'echo "$MINHPVTHE172884FPT" > efiss-terraform-service-account_Minhpvt.json'

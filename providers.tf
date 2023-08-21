@@ -12,11 +12,11 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("efiss-terraform-service-account_Longnv.json")
-  project     = "efiss-394203"
+  credentials = file("efiss-terraform-service-account_Duonglt.json")
+  project     = "efiss-duong"
   region      = var.region
   zone        = var.zone
-  alias       = "longnv"
+  alias       = "duonglt"
 }
 
 provider "google" {

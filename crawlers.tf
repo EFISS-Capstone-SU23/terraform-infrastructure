@@ -1,7 +1,7 @@
-resource "google_compute_instance" "spot_crawler_longnv" {
-  name     = "spot-crawler-longnv-${count.index}"
+resource "google_compute_instance" "spot_crawler_duonglt" {
+  name     = "spot-crawler-duonglt-${count.index}"
   count    = 0
-  provider = google.longnv
+  provider = google.duonglt
 
   machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
