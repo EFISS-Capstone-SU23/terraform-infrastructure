@@ -13,6 +13,12 @@ resource "google_sql_database_instance" "admin_instance" {
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+        name  = "allow-all"
+        value = "0.0.0.0/0"
+        }
+    }
   }
 
   deletion_protection = "true"
@@ -32,6 +38,12 @@ resource "google_sql_database_instance" "auth_instance" {
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+        name  = "allow-all"
+        value = "0.0.0.0/0"
+        }
+    }
   }
 
   deletion_protection = "true"
@@ -51,6 +63,12 @@ resource "google_sql_database_instance" "normal_user_instance" {
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+        name  = "allow-all"
+        value = "0.0.0.0/0"
+        }
+    }
   }
 
   deletion_protection = "true"
@@ -70,6 +88,12 @@ resource "google_sql_database_instance" "ads_instance" {
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    ip_configuration {
+        authorized_networks {
+        name  = "allow-all"
+        value = "0.0.0.0/0"
+        }
+    }
   }
 
   deletion_protection = "true"
