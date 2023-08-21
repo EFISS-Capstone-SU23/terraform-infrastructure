@@ -39,6 +39,12 @@ jobs:
       shell: bash
       env:
         ANHNDHE172885FPT: ${{ secrets.ANHNDHE172885FPT }}
+
+    - name: Create GCP service account 4
+      run: 'echo "$LONGNV_GCP" > efiss-terraform-service-account_Longnv.json'
+      shell: bash
+      env:
+        LONGNV_GCP: ${{ secrets.LONGNV_GCP }}
    
     - name: Create SSH keys
       run: 'echo "$SSH_KEYS" > ssh-keys.txt'
