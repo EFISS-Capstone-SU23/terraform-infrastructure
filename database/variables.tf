@@ -17,3 +17,7 @@ variable "region2_zone" {
   type    = string
   default = "us-central1-c"
 }
+
+variable "db_sql_password" {
+  type = string
+}
