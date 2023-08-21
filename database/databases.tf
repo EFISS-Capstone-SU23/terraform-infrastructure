@@ -14,10 +14,10 @@ resource "google_sql_database_instance" "admin_instance" {
   settings {
     tier = "db-f1-micro"
     ip_configuration {
-        authorized_networks {
+      authorized_networks {
         name  = "allow-all"
         value = "0.0.0.0/0"
-        }
+      }
     }
   }
 
@@ -39,10 +39,10 @@ resource "google_sql_database_instance" "auth_instance" {
   settings {
     tier = "db-f1-micro"
     ip_configuration {
-        authorized_networks {
+      authorized_networks {
         name  = "allow-all"
         value = "0.0.0.0/0"
-        }
+      }
     }
   }
 
@@ -64,10 +64,10 @@ resource "google_sql_database_instance" "normal_user_instance" {
   settings {
     tier = "db-f1-micro"
     ip_configuration {
-        authorized_networks {
+      authorized_networks {
         name  = "allow-all"
         value = "0.0.0.0/0"
-        }
+      }
     }
   }
 
@@ -89,10 +89,10 @@ resource "google_sql_database_instance" "ads_instance" {
   settings {
     tier = "db-f1-micro"
     ip_configuration {
-        authorized_networks {
+      authorized_networks {
         name  = "allow-all"
         value = "0.0.0.0/0"
-        }
+      }
     }
   }
 
