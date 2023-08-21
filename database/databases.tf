@@ -24,7 +24,7 @@ resource "google_sql_database_instance" "admin_instance" {
     }
   }
 
-  deletion_protection = "true"
+  deletion_protection = "false"
 }
 
 
@@ -52,7 +52,7 @@ resource "google_sql_database_instance" "auth_instance" {
     }
   }
 
-  deletion_protection = "true"
+  deletion_protection = "false"
 }
 
 # efiss-normal-user
@@ -80,7 +80,7 @@ resource "google_sql_database_instance" "normal_user_instance" {
     }
   }
 
-  deletion_protection = "true"
+  deletion_protection = "false"
 }
 
 # efiss-ads
@@ -108,5 +108,5 @@ resource "google_sql_database_instance" "ads_instance" {
     }
   }
 
-  deletion_protection = "true"
+  deletion_protection = "false"
 }
