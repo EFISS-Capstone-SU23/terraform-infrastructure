@@ -10,10 +10,12 @@ resource "google_sql_database_instance" "admin_instance" {
   provider         = google.minhpvt
   name             = "efiss-admin"
   region           = var.region
-  zone             = var.zone
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    location_preference {
+      zone = var.zone
+    }
     ip_configuration {
       authorized_networks {
         name  = "allow-all"
@@ -36,10 +38,12 @@ resource "google_sql_database_instance" "auth_instance" {
   provider         = google.minhpvt
   name             = "efiss-auth"
   region           = var.region
-  zone             = var.zone
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    location_preference {
+      zone = var.zone
+    }
     ip_configuration {
       authorized_networks {
         name  = "allow-all"
@@ -62,10 +66,12 @@ resource "google_sql_database_instance" "normal_user_instance" {
   provider         = google.minhpvt
   name             = "efiss-normal-user"
   region           = var.region
-  zone             = var.zone
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    location_preference {
+      zone = var.zone
+    }
     ip_configuration {
       authorized_networks {
         name  = "allow-all"
@@ -88,10 +94,12 @@ resource "google_sql_database_instance" "ads_instance" {
   provider         = google.minhpvt
   name             = "efiss-ads"
   region           = var.region
-  zone             = var.zone
   database_version = "MYSQL_8_0"
   settings {
     tier = "db-f1-micro"
+    location_preference {
+      zone = var.zone
+    }
     ip_configuration {
       authorized_networks {
         name  = "allow-all"
