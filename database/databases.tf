@@ -12,7 +12,7 @@ resource "google_sql_database_instance" "admin_instance" {
   name             = "efiss-admin"
   region           = var.region
   database_version = "MYSQL_8_0"
-  count            = 1
+  count            = 0
   settings {
     tier = "db-f1-micro"
     location_preference {
@@ -42,7 +42,7 @@ resource "google_sql_database_instance" "auth_instance" {
   name             = "efiss-auth"
   region           = var.region
   database_version = "MYSQL_8_0"
-  count            = 1
+  count            = 0
   settings {
     tier = "db-f1-micro"
     location_preference {
@@ -72,7 +72,7 @@ resource "google_sql_database_instance" "normal_user_instance" {
   name             = "efiss-normal-user"
   region           = var.region
   database_version = "MYSQL_8_0"
-  count            = 1
+  count            = 0
   settings {
     tier = "db-f1-micro"
     location_preference {
@@ -102,7 +102,7 @@ resource "google_sql_database_instance" "ads_instance" {
   name             = "efiss-ads"
   region           = var.region
   database_version = "MYSQL_8_0"
-  count            = 1
+  count            = 0
   settings {
     tier = "db-f1-micro"
     location_preference {
