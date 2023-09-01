@@ -65,3 +65,13 @@ content of .json GCP file
     # terraform apply -auto-approve
     # terraform destroy
     ```
+
+## Extra notes
+
+To create a new GCP service account, go to [GCP console](https://console.cloud.google.com/iam-admin/serviceaccounts) and create a new service account. Then, create a new key for that service account and download the json file. The json file should be named `efiss-terraform-service-account_***.json` and placed in the root directory of this project. Remember to gain role `Project > Editor` for the service account.
+
+To assume the role of the service account, run
+
+```bash
+gcloud auth activate-service-account --key-file=./efiss-terraform-service-account_***.json --project=efiss-***
+```
