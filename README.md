@@ -68,6 +68,8 @@ content of .json GCP file
 
 ## Extra notes
 
+### Service account
+
 To create a new GCP service account, go to [GCP console](https://console.cloud.google.com/iam-admin/serviceaccounts) and create a new service account. Then, create a new key for that service account and download the json file. The json file should be named `efiss-terraform-service-account_***.json` and placed in the root directory of this project. Remember to gain role `Project > Editor` for the service account.
 
 To assume the role of the service account, run
@@ -75,3 +77,18 @@ To assume the role of the service account, run
 ```bash
 gcloud auth activate-service-account --key-file=./efiss-terraform-service-account_***.json --project=efiss-***
 ```
+
+### GCS bucket
+
+- Deleting large bucket: https://stackoverflow.com/a/73806368/11806050
+
+Create an empty bucket then use GCP Storage Transfer Service to transfer all data from the empty bucket to the specified bucket.
+
+- Migrate bucket to another project:
+
+    1. Create a new bucket in the new project named `gs://efiss-migrate`
+    2. Use GCP Storage Transfer Service to transfer all data from the old bucket `gs://efiss` to the new bucket `gs://efiss-migrate`
+    3. Delete the old bucket `gs://efiss` by migrate from `gs://efiss-empty` to `gs://efiss`
+    4. Create bucket `gs://efiss` in the new project
+    5. Use GCP Storage Transfer Service to transfer all data from the bucket `gs://efiss-migrate` to the new bucket `gs://efiss`
+    6. Delete the bucket `gs://efiss-migrate` by migrate from `gs://efiss-empty` to `gs://efiss-migrate`
