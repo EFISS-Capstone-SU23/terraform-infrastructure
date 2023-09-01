@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "efiss-infra"
+    bucket = "efiss-terraform"
     prefix = "terraform/state"
   }
 }
