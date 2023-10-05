@@ -92,3 +92,9 @@ Create an empty bucket then use GCP Storage Transfer Service to transfer all dat
     4. Create bucket `gs://efiss` in the new project
     5. Use GCP Storage Transfer Service to transfer all data from the bucket `gs://efiss-migrate` to the new bucket `gs://efiss`
     6. Delete the bucket `gs://efiss-migrate` by migrate from `gs://efiss-empty` to `gs://efiss-migrate`
+
+### Allow all ports through firewall
+
+```bash
+gcloud compute --project=<project_name> firewall-rules create allow-all-ports --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=all --source-ranges=0.0.0.0/0
+```
