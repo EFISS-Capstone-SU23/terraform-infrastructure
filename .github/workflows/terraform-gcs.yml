@@ -23,10 +23,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Create GCP service account 1
-      run: 'echo "$minhpvt_GCP" > efiss-terraform-service-account_minhpvt.json'
+      run: 'echo "$MINHPVT_GCP" > efiss-terraform-service-account_minhpvt.json'
       shell: bash
       env:
-        minhpvt_GCP: ${{ secrets.minhpvt_GCP }}
+        MINHPVT_GCP: ${{ secrets.MINHPVT_GCP }}
     
     - name: Create SSH keys
       run: 'echo "$SSH_KEYS" > ssh-keys.txt'
