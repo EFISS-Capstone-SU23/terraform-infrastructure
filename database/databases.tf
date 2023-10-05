@@ -11,7 +11,7 @@ resource "google_sql_database_instance" "mysql_instance" {
   name             = "efiss-mysql"
   region           = var.region
   database_version = "MYSQL_8_0"
-  count            = 0
+  count            = 1
   settings {
     tier = "db-f1-micro"
     location_preference {
