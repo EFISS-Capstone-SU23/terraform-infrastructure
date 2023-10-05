@@ -1,10 +1,3 @@
-resource "google_sql_database" "mysql" {
-  provider = google.minhpvt
-  name     = "efiss-mysql"
-  instance = google_sql_database_instance.mysql_instance[0].name
-  count    = length(google_sql_database_instance.mysql_instance)
-}
-
 # See versions at https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance#database_version
 resource "google_sql_database_instance" "mysql_instance" {
   provider         = google.minhpvt
@@ -26,6 +19,13 @@ resource "google_sql_database_instance" "mysql_instance" {
   }
 
   deletion_protection = "false"
+}
+
+resource "google_sql_database" "mysql" {
+  provider = google.minhpvt
+  name     = "efiss-mysql"
+  instance = google_sql_database_instance.mysql_instance[0].name
+  count    = length(google_sql_database_instance.mysql_instance)
 }
 
 output "ip_address" {
