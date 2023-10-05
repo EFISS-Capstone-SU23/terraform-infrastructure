@@ -1,7 +1,7 @@
-resource "google_compute_instance" "worker_duonglt" {
-  name     = "worker-duonglt-${count.index}"
+resource "google_compute_instance" "worker_minhpvt" {
+  name     = "worker-minhpvt-${count.index}"
   count    = 0
-  provider = google.duonglt
+  provider = google.minhpvt
 
   machine_type = "e2-custom-2-8192"  # 2 vCPUs, 8 GB memory
 
@@ -37,7 +37,7 @@ resource "google_compute_instance" "worker_duonglt" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-394203/regions/${var.region}/subnetworks/default"
+    subnetwork = "projects/impactful-bee-400715/regions/${var.region}/subnetworks/default"
   }
 
   scheduling {
@@ -48,7 +48,7 @@ resource "google_compute_instance" "worker_duonglt" {
   }
 
   service_account {
-    email  = "137666907574-compute@developer.gserviceaccount.com"
+    email  = "616762020640-compute@developer.gserviceaccount.com"
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   }
 

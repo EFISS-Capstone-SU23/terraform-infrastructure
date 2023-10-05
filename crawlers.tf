@@ -1,7 +1,7 @@
-resource "google_compute_instance" "spot_crawler_duonglt" {
-  name     = "spot-crawler-duonglt-${count.index}"
+resource "google_compute_instance" "spot_crawler_minhpvt" {
+  name     = "spot-crawler-minhpvt-${count.index}"
   count    = 0
-  provider = google.duonglt
+  provider = google.minhpvt
 
   machine_type = "e2-custom-8-16384" # 4 CPU cores = 8 vCPUs, 16GB RAM
 
@@ -37,7 +37,7 @@ resource "google_compute_instance" "spot_crawler_duonglt" {
       network_tier = "PREMIUM"
     }
 
-    subnetwork = "projects/efiss-394203/regions/${var.region2}/subnetworks/default"
+    subnetwork = "projects/impactful-bee-400715/regions/${var.region2}/subnetworks/default"
   }
 
   scheduling {
@@ -48,7 +48,7 @@ resource "google_compute_instance" "spot_crawler_duonglt" {
   }
 
   service_account {
-    email  = "137666907574-compute@developer.gserviceaccount.com"
+    email  = "616762020640-compute@developer.gserviceaccount.com"
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   }
 

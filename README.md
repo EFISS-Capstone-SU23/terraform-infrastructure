@@ -31,7 +31,7 @@ thaiminhpv:ssh-rsa ... minhpvt@minhpvt-PC
 
 content of .json GCP file
 
-2.2. `DUONGLT_GCP`
+2.2. `minhpvt_GCP`
 
 content of .json GCP file
 

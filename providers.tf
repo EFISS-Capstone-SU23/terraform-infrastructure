@@ -12,9 +12,9 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("efiss-terraform-service-account_Anhnd.json")
-  project     = "reflected-coder-395210"
+  credentials = file("efiss-terraform-service-account_minhpvt.json")
+  project     = "impactful-bee-400715"
   region      = var.region
   zone        = var.zone
-  alias       = "anhnd"
+  alias       = "minhpvt"
 }
