@@ -4,7 +4,7 @@ resource "google_compute_instance" "master_minhpvt" {
   provider = google.minhpvt
 
   #   machine_type = "e2-small"
-  machine_type = "e2-custom-2-8192" # 4 CPU cores = 8 vCPUs, 16GB RAM
+  machine_type = "e2-custom-6-24576"
 
   boot_disk {
     auto_delete = true
@@ -12,7 +12,7 @@ resource "google_compute_instance" "master_minhpvt" {
 
     initialize_params {
       image = "projects/debian-cloud/global/images/debian-11-bullseye-v20230711"
-      size  = 100
+      size  = 150
       type  = "pd-balanced"
     }
 
