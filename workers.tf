@@ -3,7 +3,7 @@ resource "google_compute_instance" "worker_minhpvt" {
   count    = 0
   provider = google.minhpvt
 
-  machine_type = "e2-custom-2-8192"  # 2 vCPUs, 8 GB memory
+  machine_type = "e2-custom-2-8192" # 2 vCPUs, 8 GB memory
 
   boot_disk {
     auto_delete = true
