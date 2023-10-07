@@ -13,7 +13,7 @@ terraform {
 
 provider "google" {
   credentials = file("efiss-terraform-service-account_Minhpvt.json")
-  project     = "efiss-train"
+  project     = "impactful-bee-400715"
   region      = var.region
   zone        = var.zone
   alias       = "minhpvt"
