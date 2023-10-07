@@ -64,5 +64,5 @@ resource "google_compute_instance" "mono_minhpvt" {
 }
 
 output "mono_minhpvt_public_ip_address" {
-  value = google_compute_instance.mono_minhpvt.network_interface[0].access_config[0].nat_ip
+  value = google_compute_instance.mono_minhpvt[count.index].network_interface[0].access_config[0].nat_ip
 }
