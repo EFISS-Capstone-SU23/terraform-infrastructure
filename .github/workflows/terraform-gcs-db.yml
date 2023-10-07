@@ -2,9 +2,6 @@ name: 'Terraform CI'
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - main
 
 env:
   GOOGLE_CREDENTIALS: ${{ secrets.GCS_BUCKET_CREDENTIALS_TFSTATE }}
@@ -16,6 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./database
 
     steps:
     - name: Checkout
@@ -26,18 +24,12 @@ jobs:
       shell: bash
       env:
         MINHPVT_GCP: ${{ secrets.MINHPVT_GCP }}
-    
-    - name: Create SSH keys
-      run: 'echo "$SSH_KEYS" > ssh-keys.txt'
-      shell: bash
-      env:
-        SSH_KEYS: ${{ vars.SSH_KEYS }}
-
+ 
     - name: Create terraform.tfvars
-      run: 'echo "$TERRAFORM_TFVARS" > terraform.tfvars'
+      run: 'echo "$DB_TERRAFORM_TFVARS" > terraform.tfvars'
       shell: bash
       env:
-        TERRAFORM_TFVARS: ${{ secrets.TERRAFORM_TFVARS }}
+        DB_TERRAFORM_TFVARS: ${{ secrets.DB_TERRAFORM_TFVARS }}
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
