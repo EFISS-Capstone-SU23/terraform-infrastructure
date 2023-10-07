@@ -30,7 +30,7 @@ resource "google_compute_instance" "master_minhpvt" {
 
   metadata = {
     ssh-keys       = file("./ssh-keys.txt")
-    startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-master-setup.sh | bash -s ${var.github_runner_token}"
+    startup-script = "curl -s https://raw.githubusercontent.com/EFISS-Capstone-SU23/k8s-manifest/main/scripts/gcp-scripts/gce-master-setup.sh | bash"
   }
 
   network_interface {
@@ -61,4 +61,8 @@ resource "google_compute_instance" "master_minhpvt" {
 
   tags = ["http-server", "https-server"]
   zone = var.zone
+}
+
+output "master_minhpvt_public_ip_address" {
+  value = google_compute_instance.master_minhpvt.network_interface[0].access_config[0].nat_ip
 }
