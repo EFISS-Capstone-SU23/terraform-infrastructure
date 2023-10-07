@@ -1,6 +1,6 @@
 resource "google_compute_instance" "mono_minhpvt" {
   name     = "mono-minhpvt-${count.index}"
-  count    = 0
+  count    = 1
   provider = google.minhpvt
 
   #   machine_type = "e2-small"
